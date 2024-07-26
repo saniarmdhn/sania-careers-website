@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sania Careers</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        h1 {
+            font-size: 40px;
+            font-family: 'Lucida Sans';
+            color: rgb(122, 20, 233);
+            font-weight: normal;
+            text-align: center;
+        }
+
+        #banner {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 32px;
+            color: rgb(100, 100, 100);
+        }
+
+        .bodytext {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: rgb(0, 100, 100);
+        }
+
+        #container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid #ccc; 
+        }
+
+    </style>
+</head>
+<body>
+     {%include "nav.html"%}
+    <div id="container">
+        <h1>
+            {{ company_name }} Sania careers
+        </h1>
+        <img id="banner" src="http://127.0.0.1:5000/static/1685858318360.jpeg" height="300" />
+        <h2>
+            About Sania
+        </h2>
+        <p class="bodytext">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit vel enim eget condimentum. Cras at nisl vehicula, gravida metus eu, pellentesque nisl. Mauris sed faucibus nulla. Suspendisse libero justo, consequat eget est eget, accumsan consequat tellus. Vivamus porttitor molestie lectus, ut elementum nisi pretium eget. Aliquam fringilla quam a sem maximus vehicula. Aliquam erat volutpat. Mauris ipsum risus, congue ut sapien id, hendrerit elementum lacus. Vivamus quis nisi ornare, mollis ipsum quis, dapibus quam. Nulla facilisi. Maecenas faucibus gravida nulla, ut egestas dolor porta eget. Vestibulum ultricies ipsum quis ante gravida ultrices. Vivamus in felis est.
+        </p>
+        <h2>Open Positions</h2>
+        <div>
+            {% for job in jobs %}
+                {% include 'jobitem.html' %}
+            {% endfor %}
+        </div>
+        <div style="text-align: center;">
+            <button>Contact Us</button>
+            <p>Copyright 2024, Sania</p>
+        </div>
+    </div>
+</body>
+</html>
